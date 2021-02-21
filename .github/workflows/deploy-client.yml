@@ -1,20 +1,23 @@
-name: deploy-auth
+name: deploy-client
 
 on:
   push:
     branches:
-      - main
+      - master
     paths:
-      - 'auth/**'
+      - 'client/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd auth && docker build -t alaguselvan14/auth .
+      - run: cd client && docker build -t alaguselvan14/client .
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker push alaguselvan14/auth
+      - run: docker push alaguselvan14/client
+      # - uses: digitalocean/action-doctl@v2
+      #   with:
+      #     token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}

@@ -2,8 +2,8 @@ name: deploy-orders
 
 on:
   push:
-    branches: 
-      - master
+    branches:
+      - main
     paths:
       - 'orders/**'
 
