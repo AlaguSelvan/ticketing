@@ -2,8 +2,8 @@ name: deploy-payments
 
 on:
   push:
-    branches: 
-      - master
+    branches:
+      - main
     paths:
       - 'payments/**'
 

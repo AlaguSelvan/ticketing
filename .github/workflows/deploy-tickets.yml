@@ -2,8 +2,8 @@ name: deploy-tickets
 
 on:
   push:
-    branches: 
-      - master
+    branches:
+      - main
     paths:
       - 'tickets/**'
 
