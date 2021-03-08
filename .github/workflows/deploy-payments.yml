@@ -32,7 +32,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./
+          context: ./payments/
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: alaguselvan14/payments:latest
