@@ -22,8 +22,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./payments
-          file: ./Dockerfile
+          context: .
           push: true
           tags: alaguselvan14/payments:latest
       - name: Image digest
